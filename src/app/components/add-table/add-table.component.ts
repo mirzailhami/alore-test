@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Segment, Table } from 'src/app/model/data.model';
+import { Segment, Table } from '../../model/data.model';
 import { CrudService } from '../../services/crud.service';
 import { UtilsService } from '../../services/utils.service';
 import { AddSegmentComponent } from '../add-segment/add-segment.component';
