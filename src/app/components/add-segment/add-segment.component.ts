@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Segment } from 'src/app/model/data.model';
-import { CrudService } from 'src/app/services/crud.service';
+import { Segment } from '../../model/data.model';
+import { CrudService } from '../../services/crud.service';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
