@@ -1,0 +1,146 @@
+:host{
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    height: 100vh;
+
+    .mat-drawer-container{
+        flex: 1;
+    }
+
+    
+
+    .sidenav{
+        background-color: #F1F1F1;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+
+        .sidenav-title{
+            height: 77px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                font-size: 30px;
+                margin-left: 30px;
+                margin-bottom: 0;
+            }
+        }
+
+        .segment-list{
+            flex: 1;
+            padding: 20px 0;
+    
+            input[type=search] {
+                margin: 0 20px;
+            }
+
+            mat-nav-list{
+                a{
+                    height: 40px;
+                    font-weight: 700;
+                    color: var(--black);
+                    
+                    &:hover{
+                        background-color: #ccc;
+                    }
+                }
+
+                mat-icon{
+                    margin-right: 10px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    .btn-add-segment{
+        margin: 15px;
+        text-align: left;
+    }
+
+    .sidenav-content{
+        flex-grow: 1;
+
+        .sidenav-header{
+            height: 77px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 30px;
+
+            .sidenav-header-nav{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .content-wrapper{
+            border-top: 1px solid #ccc;
+            padding-top: 30px;
+            margin: 0 50px 50px;
+
+            .segment-accordion{
+                .segment-accordion-item-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 30px;
+
+                .segment-accordion-item-header-title{
+                    margin: 0 25px;
+                    font-weight: 700;
+                    font-size: 30px;
+                }
+
+
+                &:hover {
+                    cursor: pointer;
+                }
+                }
+
+                .segment-accordion-item.expanded {
+                    .segment-accordion-item-header-title{
+                        color: var(--black);
+                    }
+                }
+
+                .segment-accordion-item-body{
+                display: flex;
+                
+                .segment-item-wrapper{
+                    margin: 0 0 50px 50px;
+                    width: 80px;
+                    font-size: 14px;
+                    font-weight: 600;
+
+                    .segment-item{
+                        position: relative;
+                        height: 80px;
+                        border: 2px solid #ccc;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-bottom: 10px;
+
+                        .dot-color{
+                            width: 9px;
+                            height: 9px;
+                            position: absolute;
+                            background-color: #EA5A47;
+                            top: 5px;
+                            right: 5px;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+                }
+            }
+        }
+    }
+}

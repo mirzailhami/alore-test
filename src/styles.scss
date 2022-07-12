@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "../src/app/styles/button.scss";
+@import "../src/app/styles/forms.scss";
+
+@import '~@ctrl/ngx-emoji-mart/picker';
+
+html, body { height: 100%; margin: 0; }
+body { margin: 0; font-family: Inter, "Helvetica Neue", sans-serif; color: #3C3C3C; font-size: 14px; }
+h1 { font-family: Inter, "Helvetica Neue", sans-serif !important; font-weight: 600 !important; color: var(--black)}

@@ -1,0 +1,27 @@
+@import './colors.scss';
+
+button {
+    border: 0;
+    font-weight: 700;
+    font-size: 16px;
+    background: none;
+}
+
+button:focus {
+    border: none;
+}
+
+button:disabled {
+    background-color: rgba(60, 60, 60, 0.5);
+    color: white !important;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary-outline {
+    color: var(--primary);
+    border: 1px solid var(--primary) !important;
+}
