@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Segment } from 'src/app/model/data.model';
+import { CrudService } from 'src/app/services/crud.service';
 import { UtilsService } from '../../services/utils.service';
 
 @Component({
@@ -10,21 +12,26 @@ import { UtilsService } from '../../services/utils.service';
 })
 export class AddSegmentComponent implements OnInit {
   form = this.fb.group({
-    name: [null, [Validators.required, Validators.maxLength(40), this.utils.nullValueValidator]],
-    icon: [null],
-    description: [null, [Validators.maxLength(250)]],
+    name: ['', [Validators.required, Validators.maxLength(40), this.utils.nullValueValidator]],
+    icon: ['🤙'],
+    description: ['', [Validators.maxLength(250), this.utils.nullValueValidator]],
   });
+
+  showEmoji = false;
 
   constructor(
     private fb: FormBuilder,
     private utils: UtilsService,
-    public dialogRef: MatDialogRef<AddSegmentComponent>) { }
+    public dialogRef: MatDialogRef<AddSegmentComponent>,
+    private crud: CrudService) { }
 
   ngOnInit(): void {
   }
 
   addEmoji(emoji: any) {
     console.log(emoji);
+    this.form.controls.icon.setValue(emoji.emoji.native);
+    this.showEmoji = false;
   }
 
   submit() {
@@ -32,7 +39,8 @@ export class AddSegmentComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(this.form.value);
+
+    this.crud.addSegment({...this.form.value, id: new Date().getTime()} as Segment);
     this.dialogRef.close({...this.form.value});
   }
 

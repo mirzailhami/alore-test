@@ -10,6 +10,8 @@ import { AddTableComponent } from './components/add-table/add-table.component';
 import { AddSegmentComponent } from './components/add-segment/add-segment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { CrudService } from './services/crud.service';
+import { NgxColorsModule } from 'ngx-colors';
 
 
 @NgModule({
@@ -26,9 +28,10 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    PickerModule
+    PickerModule,
+    NgxColorsModule 
   ],
-  providers: [],
+  providers: [CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

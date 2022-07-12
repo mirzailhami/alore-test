@@ -11,14 +11,15 @@
       </div>
       <div class="segment-list">
         <input type="search" placeholder="Search for a table or a segment">
+        <div class="segment-title">Segments</div>
         <mat-nav-list>
-          <a mat-list-item routerLink="." *ngFor="let x of [0,1,2,3]">
-            <mat-icon svgIcon="list"></mat-icon>
-            Segment
+          <a mat-list-item routerLink="." *ngFor="let segment of segments">
+            <span class="emoji">{{segment.icon}}</span>
+            {{segment.name}}
           </a>
         </mat-nav-list>
       </div>
-      <button (click)="addSegmentModal()" mat-button class="btn-primary btn-add-segment">
+      <button (click)="showModal()" mat-button class="btn-primary btn-add-segment">
         <mat-icon aria-hidden="false">add</mat-icon>
         Add a segment
       </button>
@@ -43,7 +44,7 @@
       <div class="content-wrapper">
         <cdk-accordion class="segment-accordion">
           <cdk-accordion-item
-            *ngFor="let item of items; let index = index;"
+            *ngFor="let segment of segments; let index = index;"
             #accordionItem="cdkAccordionItem"
             class="segment-accordion-item"
             role="button"
@@ -53,8 +54,8 @@
             [attr.aria-controls]="'accordion-body-' + index"
             [class.expanded]="!accordionItem.expanded">
             <div class="segment-accordion-item-header" (click)="accordionItem.toggle()">
-              <mat-icon aria-hidden="false">home</mat-icon>
-              <div class="segment-accordion-item-header-title">{{ item }}</div>
+              <span class="emoji">{{segment.icon}}</span>
+              <div class="segment-accordion-item-header-title">{{ segment.name }}</div>
               <mat-icon aria-hidden="false">{{accordionItem.expanded ? 'expand_less' : 'expand_more'}}</mat-icon>
             </div>
             <div
@@ -63,12 +64,17 @@
               [style.display]="accordionItem.expanded ? 'none' : 'flex'"
               [attr.id]="'accordion-body-' + index"
               [attr.aria-labelledby]="'accordion-header-' + index">
-              <div class="segment-item-wrapper" *ngFor="let x of [0,1,2,3,4]">
+              <div class="segment-item-wrapper" *ngFor="let table of segment.table">
+                <div class="segment-item" [style.border-color]="table.color">
+                  <div class="dot-color" [style.background]="table.color"></div>
+                  <span class="emoji">{{table.icon}}</span>
+                </div>
+                {{table.name}}
+              </div>
+              <div class="segment-item-wrapper add-table-cols" (click)="showModal(1, segment)">
                 <div class="segment-item">
-                  <div class="dot-color"></div>
                   <mat-icon aria-hidden="false">add</mat-icon>
                 </div>
-                Network IT-es-11-50
               </div>
             </div>
           </cdk-accordion-item>

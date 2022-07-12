@@ -1,1 +1,36 @@
-<p>add-table works!</p>
+<h1 mat-dialog-title>Add a table</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form" id="form" (ngSubmit)="submit()">
+        <div class="form-field">
+            <label for="name" class="form-label">Name *</label>
+            <input type="text" formControlName="name" required maxlength="40" class="form-control" id="name"
+                placeholder="Ex: Computer Software">
+            <div *ngIf="
+                form.controls.name.errors &&
+                (form.controls.name.dirty || form.controls.name.touched)" class="form-error">
+                <p *ngIf="form.controls.name.errors.required">Name is required.</p>
+                <p *ngIf="form.controls.name.errors.maxlength">Maxlength is 40 chars.</p>
+            </div>
+        </div>
+        <div class="form-field">
+            <label for="icon" class="form-label">Icon</label>
+            <input (focus)="showEmoji = true" type="text" formControlName="icon" class="form-control" id="icon">
+            <emoji-mart *ngIf="showEmoji" (emojiClick)="addEmoji($event); showEmoji = false"
+                [style]="{ position: 'absolute', 'z-index': '1', overflow: 'visible' }" title="Pick your emoji…"
+                emoji="point_up"></emoji-mart>
+        </div>
+        <div class="form-field">
+            <label for="color" class="form-label">Color</label>
+            <div class="input-field" id="color">
+                <div class="color-picker" ngx-colors-trigger attachTo="color" [style.background]="form.value.color" format="rgba"
+                    [palette]="colorPalette" formControlName="color" [hideColorPicker]="true" [hideTextInput]="true">
+                </div>
+                <mat-icon aria-hidden="false">expand_more</mat-icon>
+            </div>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button [disabled]="form.invalid" type="submit" class="btn-primary" mat-button form="form">Add</button>
+    <button class="btn-primary-outline" mat-button mat-dialog-close>Cancel</button>
+</div>

@@ -1,16 +1,16 @@
-:host{
+:host {
     display: flex;
     flex-grow: 1;
     position: relative;
     height: 100vh;
 
-    .mat-drawer-container{
+    .mat-drawer-container {
         flex: 1;
     }
 
-    
 
-    .sidenav{
+
+    .sidenav {
         background-color: #F1F1F1;
         width: 280px;
         display: flex;
@@ -18,127 +18,154 @@
         height: 100%;
         overflow: hidden;
 
-        .sidenav-title{
+        .sidenav-title {
             height: 77px;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            h1{
+            h1 {
                 font-size: 30px;
                 margin-left: 30px;
                 margin-bottom: 0;
             }
         }
 
-        .segment-list{
+        .segment-list {
             flex: 1;
             padding: 20px 0;
-    
+
             input[type=search] {
                 margin: 0 20px;
             }
 
-            mat-nav-list{
-                a{
+            .segment-title {
+                text-transform: uppercase;
+                color: rgba(60, 60, 60, 0.7);
+                letter-spacing: 0.35px;
+                margin: 20px 20px 0px 20px;
+                font-weight: 600;
+            }
+
+            mat-nav-list {
+                a {
                     height: 40px;
                     font-weight: 700;
                     color: var(--black);
-                    
-                    &:hover{
+
+                    &:hover {
                         background-color: #ccc;
                     }
                 }
 
-                mat-icon{
+                .emoji {
                     margin-right: 10px;
-                    height: 18px;
+                    height: 18px
                 }
             }
         }
     }
 
-    .btn-add-segment{
+    .btn-add-segment {
         margin: 15px;
         text-align: left;
     }
 
-    .sidenav-content{
+    .sidenav-content {
         flex-grow: 1;
+        background: white;
 
-        .sidenav-header{
+        .sidenav-header {
             height: 77px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-left: 30px;
 
-            .sidenav-header-nav{
+            .sidenav-header-nav {
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
         }
 
-        .content-wrapper{
+        .content-wrapper {
             border-top: 1px solid #ccc;
             padding-top: 30px;
             margin: 0 50px 50px;
 
-            .segment-accordion{
+            .segment-accordion {
                 .segment-accordion-item-header {
-                display: flex;
-                align-items: center;
-                margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 30px;
 
-                .segment-accordion-item-header-title{
-                    margin: 0 25px;
-                    font-weight: 700;
-                    font-size: 30px;
-                }
+                    .emoji {
+                        font-size: 2rem;
+                    }
+
+                    .segment-accordion-item-header-title {
+                        margin: 0 25px;
+                        font-weight: 700;
+                        font-size: 30px;
+                    }
 
 
-                &:hover {
-                    cursor: pointer;
-                }
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
 
                 .segment-accordion-item.expanded {
-                    .segment-accordion-item-header-title{
+                    .segment-accordion-item-header-title {
                         color: var(--black);
                     }
                 }
 
-                .segment-accordion-item-body{
-                display: flex;
-                
-                .segment-item-wrapper{
-                    margin: 0 0 50px 50px;
-                    width: 80px;
-                    font-size: 14px;
-                    font-weight: 600;
+                .segment-accordion-item-body {
+                    display: flex;
 
-                    .segment-item{
-                        position: relative;
-                        height: 80px;
-                        border: 2px solid #ccc;
-                        border-radius: 10px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-bottom: 10px;
+                    .segment-item-wrapper {
+                        margin: 0 0 50px 50px;
+                        width: 80px;
+                        font-weight: 600;
 
-                        .dot-color{
-                            width: 9px;
-                            height: 9px;
-                            position: absolute;
-                            background-color: #EA5A47;
-                            top: 5px;
-                            right: 5px;
-                            border-radius: 50%;
+                        &.add-table-cols {
+                            color: var(--primary);
+                            cursor: pointer;
+
+                            .segment-item {
+                                border-color: var(--primary);
+                                box-shadow: 0px 5px 5px rgba(51, 75, 250, 0.25);
+                            }
+                        }
+
+                        .segment-item {
+                            position: relative;
+                            height: 80px;
+                            border: 2px solid #ccc;
+                            border-radius: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-bottom: 10px;
+
+
+                            .dot-color {
+                                width: 9px;
+                                height: 9px;
+                                position: absolute;
+                                background-color: #EA5A47;
+                                top: 5px;
+                                right: 5px;
+                                border-radius: 50%;
+                            }
+
+                            .emoji {
+                                font-size: 2rem;
+                            }
                         }
                     }
-                }
                 }
             }
         }

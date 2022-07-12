@@ -13,8 +13,8 @@
         </div>
         <div class="form-field">
             <label for="icon" class="form-label">Icon</label>
-            <!-- <input type="text" formControlName="icon" class="form-control" id="icon"> -->
-            <emoji-mart (emojiClick)="addEmoji($event)" [style]="{ position: 'absolute', bottom: '20px', right: '20px' }" title="Pick your emoji…" emoji="point_up"></emoji-mart>
+            <input (focus)="showEmoji = true" type="text" formControlName="icon" class="form-control" id="icon">
+            <emoji-mart *ngIf="showEmoji" (emojiClick)="addEmoji($event); showEmoji = false" [style]="{ position: 'absolute', 'z-index': '1', overflow: 'visible' }" title="Pick your emoji…" emoji="point_up"></emoji-mart>
         </div>
         <div class="form-field">
             <label for="description" class="form-label">Description</label>
