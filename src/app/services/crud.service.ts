@@ -13,19 +13,19 @@ export class Init {
       let data = [
         {
           id: 1,
-          name: 'Meal Prep',
+          name: 'Segments 1',
           icon: '😂',
           table: []
         }, 
         {
           id: 2,
-          name: 'Hit the gym',
+          name: 'Segments 2',
           icon: '😂',
           table: []
         }, 
         {
           id: 3,
-          name: 'Write some flawless code',
+          name: 'A new Segments',
           icon: '😂',
           table: []
         }
