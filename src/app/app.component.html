@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="content-wrapper">
-        <cdk-accordion class="segment-accordion">
+        <cdk-accordion class="segment-accordion" [multi]="true">
           <cdk-accordion-item
             *ngFor="let segment of segments; let index = index;"
             #accordionItem="cdkAccordionItem"
