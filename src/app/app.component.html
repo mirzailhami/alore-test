@@ -46,6 +46,7 @@
           <cdk-accordion-item
             *ngFor="let segment of segments; let index = index;"
             #accordionItem="cdkAccordionItem"
+            [expanded]="true"
             class="segment-accordion-item"
             role="button"
             tabindex="0"
@@ -61,7 +62,7 @@
             <div
               class="segment-accordion-item-body"
               role="region"
-              [style.display]="accordionItem.expanded ? 'none' : 'flex'"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
               [attr.id]="'accordion-body-' + index"
               [attr.aria-labelledby]="'accordion-header-' + index">
               <div class="segment-item-wrapper" *ngFor="let table of segment.table">
