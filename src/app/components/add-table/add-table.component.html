@@ -21,9 +21,9 @@
         </div>
         <div class="form-field">
             <label for="color" class="form-label">Color</label>
-            <div class="input-field" id="color">
-                <div class="color-picker" ngx-colors-trigger attachTo="color" [style.background]="form.value.color" format="rgba"
-                    [palette]="colorPalette" formControlName="color" [hideColorPicker]="true" [hideTextInput]="true">
+            <div class="input-field" id="color" ngx-colors-trigger attachTo="color" format="rgba"
+            [palette]="colorPalette" formControlName="color" [hideColorPicker]="true" [hideTextInput]="true">
+                <div class="color-picker" [style.background]="form.value.color">
                 </div>
                 <mat-icon aria-hidden="false">expand_more</mat-icon>
             </div>

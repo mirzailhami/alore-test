@@ -97,6 +97,8 @@
             margin: 0 50px 50px;
 
             .segment-accordion {
+                display: block;
+
                 .segment-accordion-item-header {
                     display: flex;
                     align-items: center;
@@ -116,6 +118,10 @@
                     &:hover {
                         cursor: pointer;
                     }
+                }
+
+                .segment-accordion-item{
+                    display: block;
                 }
 
                 .segment-accordion-item.expanded {
