@@ -41,6 +41,8 @@ export class AppComponent {
     dialog.afterClosed().subscribe(result => {
       if (result && type === 1) {
         this.segments.find(t => t.id === data.id)?.table?.push(result);
+      } else {
+        this.segments.push(result);
       }
     });
   }
